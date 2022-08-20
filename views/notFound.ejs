@@ -1,0 +1,13 @@
+<%- include("header") -%>
+
+    
+    <div class="box" id="heading">
+    <input type="hidden" name="hi" value="<%= item %>"></input>
+    <h1>This list dosen't exist...create now?</h1>
+    <button><a href="/<%= item %>" onclick="this.form.submit()">Yes</a></button>
+    <button><a href="/myList" onclick="this.form.submit()">No</a></button>
+    </div>
+    <%- include("footer") -%>
+    
+
+<!---->

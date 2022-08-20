@@ -1,0 +1,16 @@
+<%- include("header") -%>
+
+    <div class="container">
+        <div class="find">
+            <% newItem.forEach(function(item){ %>
+                <div class="box" id="heading">
+                    <h1><%= item.name %></h1>
+                    <button><a href="/<%= item.name %>">Go</a></button>
+                    </div>
+            <% }); %>
+        </div>
+        
+        <div class="backFromShow"><a href="/myList">back</a></div>
+    </div>
+
+<%- include("footer") -%>

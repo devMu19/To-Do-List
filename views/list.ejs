@@ -1,0 +1,71 @@
+    <%- include("header") -%>
+
+<!--  Start Navigation Bar    -->
+<header>
+    <div class="container">
+        <div class="containt">
+            <div class="logo">lists</div>
+            <nav>
+                <ul>
+                    <li> <a href="/show">My List</a></li>
+                    <li><a href="/myList">DL</a></li>
+                    <li><form action="deleteAll" method="post">
+                        <button type="submit" name="deleteAll" >delete</button>
+                        <input type="hidden" name="delete" value="<%= title %>"></input>
+                    </form></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!--  End Navigation Bar    -->
+
+
+    <!--  Search  Lists    -->
+    <div class="container">
+        <div class="box">
+            <form class="item" action="/search" method="post">
+                <input type="text" name="inputSeacrh" placeholder="Search" autocomplete="off">
+                <button type="submit" name="button"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+<!--  End  Search  Lists    -->
+
+
+
+
+    <div class="box" id="heading">
+    <h1><%= title %></h1>
+    </div>
+
+    <div class="box">
+        <% newItem.forEach(function(item){ %>
+            <form action="/delete" method="post">
+            <div class="item">
+                <input type="checkbox" name="cb" value="<%=item.name%>" onchange="this.form.submit()">
+                <p><%= item.name%></p>
+            </div>
+            <input type="hidden" name="hi" value="<%= title %>"></input>
+        </form>
+            <%}) %>
+        
+        <form class="item" action="/innerItem" method="POST">
+            <input type="text" name="userItem" placeholder="<%=placeholder%>" autocomplete="off">
+            <button type="submit" name="button" value= <%= title %> > + </button>
+        </form>
+
+    </div>
+    <!-- Up -->
+    <i class="fas fa-chevron-up up" id="up"></i>
+    <!-- End Up -->
+    
+
+
+    <%- include("footer") -%>
+    
+
+<!---->
